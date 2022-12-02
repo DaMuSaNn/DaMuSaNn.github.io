@@ -1,0 +1,103 @@
+/*****************************/
+/*style for the final project*/
+/***** div style ****************/
+div.top
+{
+	width:99.3%;
+	height:25.5%;
+	background-color:#0073e6;
+	float:top;
+	border: 1px;
+	border-radius:8px;
+	border-style:outset;
+}
+div.middle{
+	width:1%;
+	height:1%;
+}
+div.middle2
+{
+	width:1%;
+	height:1%;
+}
+div.bottom
+{
+	width:99.5%;
+	height:75%;
+	background-color:#00213D;
+	float: bottom;
+}
+div.bottom2
+{
+	width:99.3%;
+	height:81.5%;
+	background-color:#0099ff;
+	float:bottom;
+	border: 1px;
+	border-radius:8px;
+	border-style:outset;
+}
+div.left
+{
+	width:8%;
+	height:100%;
+	background-color:#0073e6;
+	float:left;
+	border-radius:8px;
+	border-style:outset;
+}
+div.right
+{
+	width:90.5%;
+	height:;
+	background-color:#0099ff;
+	float:right;
+	border-radius:8px;
+	border-style:outset;
+}
+div.info
+{
+	width:1200px;
+	height:;
+	background-color:#ffffff;
+	border-radius:8px;
+	border-style:inset;
+	border-color:black;
+	box-shadow:10px 10px;
+}
+/*fonts*/
+font.style1
+{
+	font-family:"Arial";
+	font-size:14px;
+	font-style:shadow;
+	text-shadow:0 0 3px #001629;
+}
+a.style2{
+	font-family:"Arial";
+	font-size:14px;
+	font-style:shadow;
+	color:white;
+}
+/**body**/
+body.style3
+{
+	background-color:#00213D;
+}
+h4.style4
+{
+	font-family:"Arial";
+	font-size:14px;
+	font-style:shadow;
+	text-shadow:0 0 3px #001629;
+}
+image.tecLogo
+{
+	float:right;
+}
+
+iframe.medidas
+{
+	width:450px;
+	height:550px;
+}

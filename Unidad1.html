@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" media = "screen" type="text/css" href="Style.css"/>
+</head>
+<body class="style3">
+	<!--div top-->
+	<div class="top">
+		<h1>Arquitectura de computadoras</h1>
+	</div>
+	<!--div middle-->
+	<div class="middle">
+	
+	</div>
+	<!--div bottom-->
+	<div class="bottom2">	
+		<p><h4>1.1 Modelos de arquitectura de cómputo</h4></p>
+		<p><h4>1.1.1 Clásicas</h4>
+			<div class="info">
+				Estas arquitecturas se desarrollaron en las primeras computadoras electromecánicas y de tubos de
+				vacío. Aun son usadas en procesadores empotrados de gama baja y son la base de la mayoría de las
+				arquitecturas modernas.<br>
+				
+				Arquitectura Mauchly-Eckert (Von Newman)
+				Esta arquitectura fue utilizada en la computadora ENIAC. Consiste en una unidad central de proceso
+				que se comunica a través de un solo bus con un banco de memoria en donde se almacenan tanto los
+				códigos de instrucción del programa, como los datos que serán procesados por este.
+				Esta arquitectura es la más empleada en la actualidad ya, que es muy versátil. Ejemplo de esta
+				versatilidad es el funcionamiento de los compiladores, los cuales son programas que toman como
+				entrada un archivo de texto conteniendo código fuente y generan como datos de salida, el código
+				maquina que corresponde a dicho código fuente (Son programas que crean o modifican otros
+				programas). Estos datos de salida pueden ejecutarse como un programa posteriormente ya que se usa la
+				misma memoria para datos y para el código del programa.<br>
+				
+				Arquitectura Harvard
+				Esta arquitectura surgió en la universidad del mismo nombre, poco después de que la arquitectura Von
+				Newman apareciera en la universidad de Princeton. Al igual que en la arquitectura Von Newman, el
+				programa se almacena como un código numérico en la memoria, pero no en el mismo espacio de
+				memoria ni en el mismo formato que los datos. Por ejemplo, se pueden almacenar las instrucciones en
+				doce bits en la memoria de programa, mientras los datos de almacenan en ocho bits en una memoria
+				aparte.
+			</div>
+		</p>
+		<p><h4>1.1.2 Segamentadas</h4>
+			<div class="info">
+				Las arquitecturas segmentadas o con segmentación del cauce buscan mejorar el desempeño realizando
+				paralelamente varias etapas del ciclo de instrucción al mismo tiempo. El procesador se divide en varias
+				unidades funcionales independientes y se dividen entre ellas el procesamiento de las instrucciones. Para:
+				Procesador Memoria de datos, Entrada y salida, Bus de datos, Memoria de programa, Bus de programa, Registros, ALU, Unidad de Control,
+				comprender mejor esto, supongamos que un procesador simple tiene un ciclo de instrucción sencillo
+				consistente solamente en una etapa de búsqueda del código de instrucción y en otra etapa de ejecución
+				de la instrucción. En un procesador sin segmentación del cauce, las dos etapas se realizarían de manera
+				secuencial para cada una de la instrucciones.<br>
+				
+				En un procesador con segmentación del cause, cada una de estas etapas se asigna a una unidad
+				funcional diferente, la búsqueda a la unidad de búsqueda y la ejecución a la unidad de ejecución. Estas
+				unidades pueden trabajar en forma paralela en instrucciones diferentes. Estas unidades se comunican
+				por medio de una cola de instrucciones en la que la unidad de búsqueda coloca los códigos de
+				instrucción que leyó para que la unidad de ejecución los tome de la cola y los ejecute. Esta cola se
+				parece a un tubo donde las instrucciones entran por un extremo y salen por el otro. De esta analogía
+				proviene el nombre en ingles: Pipelining o entubamiento. 
+			</div>
+		</p>	
+		<p><h4>1.1.3 Multiprocesamiento</h4>
+			<div class="info">
+				Cuando se desea incrementar el desempeño más aya de lo que permite la técnica de segmentación del
+				cauce (limite teórico de una instrucción por ciclo de reloj), se requiere utilizar más de un procesador
+				para la ejecución del programa de aplicación.
+				Las CPU de multiprocesamiento se clasifican de la siguiente manera (Clasificación de Flynn):
+				● SISO – (Single Instruction, Single Operand ) computadoras Monoprocesador
+				● SIMO – (Single Instruction, Multiple Operand ) procesadores vectoriales, Exenciones MMX
+				● MISO – (Multiple Instruction, Single Operand ) No implementado
+				● MIMO – (Multiple Instruction, Multiple Operand ) sistemas SMP, Clusters, GPUs
+				Procesadores vectoriales – Son computadoras pensadas para aplicar un mismo algoritmo numérico a
+				una serie de datos matriciales, en especial en la simulación de sistemas físicos complejos, tales como
+				simuladores para predecir el clima, explosiones atómicas, reacciones químicas complejas, etc., donde
+				los datos son representados como grandes números de datos en forma matricial sobre los que se deben
+				se aplicar el mismo algoritmo numérico.
+				La mayoría de los procesadores modernos incluye algunas instrucciones de tipo vectorial, tales como
+				las extensiones al conjunto de instrucciones tales como MMX y SSE. Estas instrucciones les permiten
+				procesar flujos multimedia más eficientemente.
+				Los Procesadores Digitales de Señales (DSP), son procesadores especializados en el procesamiento de
+				señales tales como audio, vídeo, radar, sonar, radio, etc. Cuentan con instrucciones tipo vectorial que
+				los hace muy aptos para dicha aplicación. Suelen utilizarse en conjunto con un microcontrolador en
+				dispositivos como reproductores de audio, reproductores de dvd y Blueray, teléfonos celulares,
+				sistemas de entretenimiento, sistemas de adquisición de datos, instrumentos médicos, controles
+				industriales, etc.
+			</div>
+		</p>
+		<p><h4>1.2 Analisis de componenetes</h4></p>
+		<p><h4>1.2.1 Arquiecturas</h4>
+			<div class="info">
+				Ademas de las arquitecturas clásicas mencionadas anteriormente, en la actualidad han aparecido
+				arquitecturas híbridas entre la Von Newman y la Harvard, buscando conservar la flexibilidad, pero
+				mejorando el rendimiento.
+				Uno de los cambios más importante de los últimos años en diseño de las computadoras se dio durante
+				los años 1980s, con la aparición de la corriente de diseño conocida como computadoras de conjunto
+				reducido de instrucciones (RISC, por sus siglas en ingles). Esta escuela pretende aplicar un enfoque
+				totalmente distinto al tradicional hasta entonces, que paso a conocerse como computadoras de conjunto
+				complejo de instrucciones (CISC) para diferenciarla de la nueva tendencia.
+				La tendencia tradicional, representada por las arquitecturas CISC (Complex Instruction Set Computers)
+				se caracterizan por tener un número amplio de instrucciones y modos de direccionamiento. Se
+				implementan instrucciones especiales que realizan funciones complejas, de manera que un
+				programador puede encontrar con seguridad, una instrucción especial que realiza en hardware la
+				función que el necesita. El número de registros del CPU es limitado, ya que las compuertas lógicas del
+				circuito integrado se emplean para implementar las secuencias de control de estas instrucciones
+				especiales.
+				Al investigar las tendencias en la escritura de software científico y comercial al inicio de los 80, ya se
+				pudo observar que en general ya no se programaba mucho en ensamblador, sino en lenguajes de alto
+				nivel, tales como C. Los compiladores de lenguajes de alto nivel no hacían uso de las instrucciones
+				especiales implementadas en los procesadores CISC, por lo que resultaba un desperdicio de recursos
+				emplear las compuertas del circuito de esta forma. Por lo anterior, se decidió que era mejor emplear
+				estos recursos en hacer que las pocas instrucciones que realmente empleaban los compiladores se
+				ejecutaran lo más rápidamente posible. Así surgió la escuela de diseño RISC (Reduced Instruction Set
+				Computers) donde solo se cuenta con unas pocas instrucciones y modos de direccionamiento, pero se
+				busca implementarlos de forma muy eficiente y que todas las instrucciones trabajen con todos los
+				modos de direccionamiento. Ademas, se observo que una de las tareas que tomaban más tiempo en
+				ejecutarse en lenguajes de alto nivel, era el pasar los parámetros a las subrutinas a través de la pila.
+				Como la forma más rápida de hacer este paso es por medio de registros del CPU, se busco dotarlo con
+				un amplio número de registros, a través de los cuales se pueden pasar dichos parámetros.
+			</div>
+		</p>
+		<p><h4>1.2.2 Unidad central de procesamiento</h4>
+			<div class="info">
+				Los CPUs modernos pueden clasificarse de acuerdo a varias características, tales como:
+				Tamaño de la Unidad Aritmética Lógica (ALU). Bus de conexión al exterior (8, 16, 32, 64 bits)
+				Si su arquitectura tiene cauce (pipeline).
+				Si son de arquitectura CISC o RISC.
+				Si son Von Newmann o Harvard.
+				Si manejan instrucciones enteras o implementan también instrucciones de punto flotante.
+			</div>
+		</p>
+		<p><h4>1.2.3 Unidad de aritmetica lógica</h4>
+			<div class="info">
+				En computación, la unidad aritmética lógica o unidad aritmético-lógica, también conocida como ALU, 
+				es un circuito digital que realiza operaciones aritméticas y operaciones lógicas entre los valores de los argumentos. 
+			</div>
+		</p>
+		<p><h4>1.2.4 Registros</h4>
+			<div class="info">
+				En arquitectura de ordenadores, un registro es una memoria de alta velocidad y poca capacidad,
+				integrada en el microprocesador, que permite guardar transitoriamente y acceder a valores muy usados, 
+				generalmente en operaciones matemáticas. Los registros están en la cumbre de la jerarquía de memoria,
+				y son la manera más rápida que tiene el sistema de almacenar datos. Los registros se miden generalmente 
+				por el número de bits que almacenan; por ejemplo, un "registro de 8 bits" o un "registro de 32 bits". 
+				Los registros generalmente se implementan en un banco de registros, pero antiguamente se usaban 
+				biestables individuales, memoria SRAM o formas aún más primitivas. El término es usado generalmente 
+				para referirse al grupo de registros que pueden ser directamente indexados como operandos d el bus (o, canal)
+				es un sistema digital que transfiere datos entre los componentes de una computadora. Está formado por cables 
+				o pistas en un circuito impreso, dispositivos como resistores y condensadores,
+				además de circuitos integrados.e una instrucción, como está definido en el conjunto de instrucciones.
+				Sin embargo, los microprocesadores tienen además muchos otros registros que se usan con un propósito específico,
+				como el contador de programa. Por ejemplo, en la arquitectura IA32, el conjunto de instrucciones
+				define 8 registros de 32 bits.
+			</div>
+		</p>
+		<p><h4>1.2.5 Buses</h4>
+			<div class="info">
+				el bus (o, canal) es un sistema digital que transfiere datos entre los componentes de una computadora.
+				Está formado por cables o pistas en un circuito impreso, dispositivos como resistores y condensadores,
+				además de circuitos integrados.<br>
+				Existen dos tipos de transferencia en los buses:
+				Serie: El bus solamente es capaz de transferir los datos bit a bit. Es decir, el bus tiene un único cable que transmite la información.
+				Paralelo: El bus permite transferir varios bits simultáneamente, por ejemplo 8 bits.
+				Aunque en primera instancia parece mucho más eficiente la transferencia en paralelo, esta presenta inconvenientes:
+				La frecuencia de reloj en el bus paralelo tiene que ser más reducida.
+				La longitud de los cables que forman el bus está limitada por las posibles interferencias, el ruido y los retardos en la señal.
+				Además, los modernos buses serie están formados por varios canales: En este caso se transmite por varios buses serie simultáneamente.
+				En los primeros computadores electrónicos, era muy habitual encontrar buses paralelos, 
+				quedando los buses serie dedicados para funciones de menor entidad y dispositivos lentos, como el teclado.
+				La tendencia en los últimos años es reemplazar los buses paralelos por buses serie (que suelen ser multicanal).
+				Estos son más difíciles de implementar, pero están dejando velocidades de transferencia más elevadas, además de permitir longitudes de cable mayores.
+			</div>
+		</p>
+		<p><h4>1.3 Memoria</h4>
+			<div class="info">
+				Es un dispositivo que puede mantenerse en por lo menos dos estados estables por un cierto periodo de tiempo.
+				Cada uno de estos estados estables puede utilizarse para representar un bit.
+				A un dispositivo con la capacidad de almacenar por lo menos un bit se le conoce como celda básica de memoria.
+				Un dispositivo de memoria completo se forma con varias celdas básicas y los circuitos asociados para poder leer y 
+				escribir dichas celdas básicas, agrupadas como localidades de memoria que permitan almacenar un grupo de N bits.
+				El número de bits que puede almacenar cada localidad de memoria es conocido como el ancho de palabra de la memoria. 
+				Coincide con el ancho del bus de datos.
+				Uno de los circuitos auxiliares que integran la memoria es el decodificador de direcciones. 
+				Su función es la de activar a las celdas básicas que van a ser leídas o escritas a partir de la dirección presente en el bus de direcciones. 
+				Tiene como entradas las N líneas del bus de direcciones y 2N líneas de habilitación de localidad, 
+				cada una correspondiente a una combinación binaria distinta de los bits de direcciones.
+				Por lo tanto, el número de localidades de memoria disponibles en un dispositivo (T) 
+				se relaciona con el número de líneas de dirección N por T= 2N.
+			</div>
+		</p>
+		<p><h4>1.3.1 Conceptos básicos del manejo de mamoria</h4></p>
+		<p><h4>1.3.2 Memoria principal</h4>
+			<div class="info">
+				a memoria RAM o “memoria de acceso aleatorio” es la memoria principal del dispositivo, 
+				en la que se almacenan programas y datos.
+				Sus siglas significan Random Access Memory y es el lugar en el que se cargan todas las
+				instrucciones que ejecuta la unidad central de procesamiento y otras unidades del PC.
+
+			</div>
+		</p>
+		<p><h4>1.3.3 Memoria caché</h4>
+			<div class="info">
+				En informática, una memoria caché es una capa de almacenamiento de datos de alta velocidad 
+				que almacena un subconjunto de datos, normalmente transitorios, de modo que las solicitudes 
+				futuras de dichos datos se atienden con mayor rapidez que si se debe acceder a los datos 
+				desde la ubicación de almacenamiento principal.
+			</div>
+		</p>
+		<p><h4>1.4 Manejo de entrada y salida</h4></p>
+		<p><h4>1.4.1 Módulos de entrada y salida</h4>
+			<div class="info">
+				Los módulos de Entrada / Salida, son dispositivos de estado sólido que permiten adaptar 
+				diferentes niveles de tensión desde o hacia un sistema lógico. Módulos de entrada:
+				convierten una señal alterna o continua en una señal de nivel lógico continuo.
+			</div>
+		</p>
+		<p><h4>1.4.2 Entrada y salida programado</h4>
+			<div class="info">
+				nterfaz que traduce la información asíncrona y analógica del mundo exterior a la información 
+				síncrona y codificada del computador. (externo). – Coordina el correcto flujo de información 
+				entre uno o varios dispositivos externos (impresora, monitor) e internos (memoria, procesador).
+			</div>
+		</p>
+		<p><h4>1.4.3 Entrada y salida por interrupciones</h4>
+			<div class="info">
+				En el caso de la entrada/salida por interrupciones, es el dispositivo quien establece el momento
+				en que se realiza la transferencia de los datos, avisando a la CPU de que ha ocurrido un evento 
+				(por ejemplo, que el usuario haya presionado una tecla).
+			</div>
+		</p>
+		<p><h4>1.4.4 Acceso directo a memoria</h4>
+			<div class="info">
+				El DMA (acceso directo a la memoria) permite que el dispositivo de red mueva los datos del paquete 
+				directamente a la memoria del sistema, reduciendo la utilización de la CPU.
+			</div>
+		</p>
+		<p><h4>1.4.5 Canales y procesadores</h4></p>
+		<p><h4>1.5 Buses</h4>
+			<div class="info">
+				el bus (o, canal) es un sistema digital que transfiere datos entre los componentes de una computadora.
+				Está formado por cables o pistas en un circuito impreso, dispositivos como resistores y condensadores,
+				además de circuitos integrados.
+				
+			</div>
+		</p>
+		<p><h4>1.5.1 Tipos de buses</h4>
+			<div class="info">
+				Existen dos tipos de transferencia en los buses:
+				Serie: El bus solamente es capaz de transferir los datos bit a bit. Es decir, el bus tiene un único cable que transmite la información.
+				Paralelo: El bus permite transferir varios bits simultáneamente, por ejemplo 8 bits.
+				Aunque en primera instancia parece mucho más eficiente la transferencia en paralelo, esta presenta inconvenientes:
+				La frecuencia de reloj en el bus paralelo tiene que ser más reducida.
+			</div>
+		</p>
+		<p><h4>1.5.2 Estructura</h4>
+			<div class="info">
+				Un bus está compuesto por conductos, o vías, que permiten la interconexión de los diferentes componentes, principálmente, 
+				con la CPU y la memoria. Los buses se dividen, fundamentalmente, en dos subcategorías principales: bus de datos y bus de direcciones.
+			</div>
+		</p>
+		<p><h4>1.5.3 Jerarquias</h4>
+			<div class="info">
+				Los buses se dividen, fundamentalmente, en dos subcategorías principales: bus de datos y bus de direcciones. Entre estos existen una fuerte relación,
+				puesto que para cada instrucción o dato enviado por uno de los dos buses, el otro transporta información acerca de esa instrucción o dato.
+			</div>
+		</p>
+		<p><h4>1.6 Interrupciones</h4>
+			<div class="info">
+				Una interrupción consiste en un mecanismo que provoca la alteración del orden lógico de ejecución de instrucciones como respuesta a un evento externo,
+				generado por el hardware de entrada/salida en forma asincrónica al programa que está siendo ejecutado y fuera de su control.
+			</div>
+		</p>
+	</div>
+</body>
+</html>
